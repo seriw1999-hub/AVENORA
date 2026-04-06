@@ -1,0 +1,13 @@
+button {
+    padding: 14px 24px;
+    border-radius: var(--btn-radius);
+    border: none;
+    cursor: pointer;
+    background: var(--light-blue);
+    color: var(--dark-navy);
+    transition: var(--transition);
+}
+
+button:hover {
+    transform: scale(1.05);
+}

@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="az">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avenora Travel</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Trocchi&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- AOS animasiya -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- CSS – sırayla yüklənir, ən ümumi → ən xüsusi -->
+    <link rel="stylesheet" href="assets/css/base/reset.css">
+    <link rel="stylesheet" href="assets/css/base/typography.css">
+    <link rel="stylesheet" href="assets/css/base/variables.css">
+
+    <link rel="stylesheet" href="assets/css/components/buttons.css">
+    <link rel="stylesheet" href="assets/css/components/card.css">
+    <link rel="stylesheet" href="assets/css/components/navbar.css">
+    <link rel="stylesheet" href="assets/css/components/scroll-carousel.css">
+    <!-- digər komponentlər -->
+
+    <link rel="stylesheet" href="assets/css/layout/grid.css">
+    <link rel="stylesheet" href="assets/css/layout/header.css">
+    <link rel="stylesheet" href="assets/css/layout/footer.css">
+    <link rel="stylesheet" href="assets/css/layout/sections.css">
+
+    <!-- səhifəyə xas -->
+    <link rel="stylesheet" href="assets/css/pages/home.css">
+
+    <!-- ən sonda main – override üçün -->
+    <link rel="stylesheet" href="assets/css/main.css">
+
+    <link rel="icon" type="image/png" href="assets/images/logo/extension_icon (1).png">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="navbar fixed top-0 left-0 right-0 z-50">
+        <!-- navbar -->
+
+        <nav class="container mx-auto px-6 flex items-center justify-between h-16">
+            <a href="index.html" class="flex items-center gap-2">
+                <img src="assets/images/logo/extension_icon (1).png" alt="Avenora" class="h-8 w-auto">
+                <span class="text-xl font-bold text-gray-800">
+                    Avenora <span class="text-blue-600">Travel</span>
+                </span>
+            </a>
+
+            <div class="hidden md:flex items-center gap-8">
+                <a href="index.html" class="nav-link">Ana səhifə</a>
+                <a href="tours.html" class="nav-link">Turlar</a>
+                <a href="about.html" class="nav-link">Haqqımızda</a>
+                <a href="contact.html" class="nav-link">Əlaqə</a>
+                <a href="auth.html" class="nav-link">Giriş</a>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <div id="user-menu-desktop" class="relative hidden md:block">
+                </div>
+
+                <button onclick="openSidePanel('cart')" class="hidden relative p-3 text-gray-600 ...">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </button>
+
+                <button onclick="openSidePanel('fav')" class="hidden relative p-3 bg-none ...">
+                    <i class="fa-solid fa-heart"></i>
+                </button>
+            </div>
+        </nav>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+            class="hidden md:hidden bg-white border-t border-gray-100 overflow-hidden transition-all duration-300">
+            <div class="px-6 py-6 flex flex-col gap-4">
+                <a href="index.html" class="mobile-link">Ana səhifə</a>
+                <a href="tours.html" class="mobile-link">Turlar</a>
+                <a href="about.html" class="mobile-link">Haqqımızda</a>
+                <a href="contact.html" class="mobile-link">Əlaqə</a>
+                <div id="user-menu-mobile" class="pt-4 border-t border-gray-100">
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+
+        <!-- HERO SECTION -->
+        <section class="hero" data-aos="fade-up" data-aos-delay="100">
+            <video class="hero-video" autoplay muted loop playsinline>
+                <source src="assets/images/backgrounds/hero (2).mp4" type="video/mp4">
+            </video>
+            <div class="hero-overlay"></div>
+            <div class="container hero-content">
+                <h1>Xəyallarını Yaşa <br><br><br> <span><sub>AVENORA Travel</sub></span></h1>
+                <br><br>
+                <div class="search-box">
+                    <input type="text" placeholder="Haraya getmək istəyirsiniz?">
+                    <button>Axtar</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SƏYAHƏT İDEYALARIMIZ -->
+        <section class="py-16 px-6 bg-white">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-3xl font-bold mb-10 text-center">Səyahət İdeyalarımız</h2>
+
+                <div id="dynamic-category-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                </div>
+
+            </div>
+        </section>
+        <!-- Məşhur İstiqamətlər -->
+        <section class="bg-gray-100 destinations cinematic-section py-20 overflow-hidden" data-aos="fade-up"
+            data-aos-delay="350">
+            <div class="container mx-auto px-6 mb-10">
+                <div class="flex items-end justify-between">
+                    <div>
+                        <span
+                            class="text-blue-600 font-black uppercase tracking-[0.3em] text-[10px] mb-2 block">Səyahətini
+                            Planla</span>
+                        <h2 class="text-4xl font-black text-slate-900 uppercase">Məşhur İstiqamətlər</h2>
+                    </div>
+                    <a href="tours.html/?cat=popular"
+                        class="text-sm font-bold text-slate-400 hover:text-blue-600 transition">Hamısına bax
+                        <i class="fa-solid fa-arrow-right ml-2"></i></a>
+                </div>
+            </div>
+
+            <div class="cinematic-track flex gap-6 px-6" id="destinationsTrack">
+
+                <a href="tours.html?cat=turkey"
+                    class="cinematic-card group relative min-w-[350px] h-[500px] rounded-[40px] overflow-hidden bg-cover bg-center transition-all duration-500 hover:scale-[0.98]"
+                    style="background-image: url('assets/images/tours/bestistanbul.jpg')">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity">
+                    </div>
+                    <div class="absolute bottom-10 left-10">
+                        <p class="text-white/70 text-xs font-bold uppercase tracking-widest mb-1">Türkiyə</p>
+                        <h3 class="text-3xl font-black text-white uppercase">İstanbul</h3>
+                    </div>
+                </a>
+
+                <a href="tours.html?cat=italy"
+                    class="cinematic-card group relative min-w-[350px] h-[500px] rounded-[40px] overflow-hidden bg-cover bg-center transition-all duration-500 hover:scale-[0.98]"
+                    style="background-image: url('assets/images/tours/best roma.jpg')">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity">
+                    </div>
+                    <div class="absolute bottom-10 left-10">
+                        <p class="text-white/70 text-xs font-bold uppercase tracking-widest mb-1">İtaliya</p>
+                        <h3 class="text-3xl font-black text-white uppercase">Roma</h3>
+                    </div>
+                </a>
+
+                <a href="tours.html?cat=europe"
+                    class="cinematic-card group relative min-w-[350px] h-[500px] rounded-[40px] overflow-hidden bg-cover bg-center transition-all duration-500 hover:scale-[0.98]"
+                    style="background-image: url('assets/images/tours/best london.jpg')">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity">
+                    </div>
+                    <div class="absolute bottom-10 left-10">
+                        <p class="text-white/70 text-xs font-bold uppercase tracking-widest mb-1">Böyük Britaniya</p>
+                        <h3 class="text-3xl font-black text-white uppercase">London</h3>
+                    </div>
+                </a>
+
+                <a href="tours.html?cat=japan"
+                    class="cinematic-card group relative min-w-[350px] h-[500px] rounded-[40px] overflow-hidden bg-cover bg-center transition-all duration-500 hover:scale-[0.98]"
+                    style="background-image: url('assets/images/tours/best tokyo.png')">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity">
+                    </div>
+                    <div class="absolute bottom-10 left-10">
+                        <p class="text-white/70 text-xs font-bold uppercase tracking-widest mb-1">Yaponiya</p>
+                        <h3 class="text-3xl font-black text-white uppercase">Tokio</h3>
+                    </div>
+                </a>
+            </div>
+        </section>
+        <!-- Eksklüziv Uçuşlar -->
+        <section class="py-20 bg-slate-50" data-aos="fade-up" data-aos-delay="200">
+            <div class="container mx-auto px-6">
+                <div class="max-w-3xl mb-12">
+                    <span class="text-blue-600 font-black uppercase tracking-[0.3em] text-[10px] mb-2 block">Eksklüziv
+                        Uçuşlar</span>
+                    <h2 class="text-3xl md:text-4xl font-black text-slate-900 leading-tight">
+                        Azərbaycan Hava Yolları ilə <span class="text-blue-600">Rahat Uçuş</span> – 2025 Marşrutları
+                    </h2>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div
+                        class="hover-card group relative h-[320px] rounded-[32px] overflow-hidden shadow-lg transition-all duration-500 hover:-translate-y-2">
+                        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                            style="background-image:url('assets/images/tours/barselona.jpg')"></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-blue-900/90 via-slate-900/20 to-transparent">
+                        </div>
+
+                        <div class="absolute inset-0 p-8 flex flex-col justify-end">
+                            <h3 class="text-2xl font-black text-white mb-1">Barselona</h3>
+                            <p class="text-white/70 text-sm mb-4">İspaniya, Avropa</p>
+                            <a href="tours.html?cat=azal"
+                                class="inline-flex items-center justify-center w-12 h-12 bg-white/20 backdrop-blur-md rounded-full text-white hover:bg-white hover:text-blue-600 transition-all">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div
+                        class="hover-card group relative h-[320px] rounded-[32px] overflow-hidden shadow-lg transition-all duration-500 hover:-translate-y-2">
+                        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                            style="background-image:url('assets/images/tours/london.jpg')"></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-blue-900/90 via-slate-900/20 to-transparent">
+                        </div>
+
+                        <div class="absolute inset-0 p-8 flex flex-col justify-end">
+                            <h3 class="text-2xl font-black text-white mb-1">London</h3>
+                            <p class="text-white/70 text-sm mb-4">Birləşmiş Krallıq</p>
+                            <a href="tours.html?cat=azal"
+                                class="inline-flex items-center justify-center w-12 h-12 bg-white/20 backdrop-blur-md rounded-full text-white hover:bg-white hover:text-blue-600 transition-all">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div
+                        class="hover-card group relative h-[320px] rounded-[32px] overflow-hidden shadow-lg transition-all duration-500 hover:-translate-y-2">
+                        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                            style="background-image:url('assets/images/tours/milan.jpg')"></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-blue-900/90 via-slate-900/20 to-transparent">
+                        </div>
+
+                        <div class="absolute inset-0 p-8 flex flex-col justify-end">
+                            <h3 class="text-2xl font-black text-white mb-1">Milan</h3>
+                            <p class="text-white/70 text-sm mb-4">İtaliya, Avropa</p>
+                            <a href="tours.html?cat=azal"
+                                class="inline-flex items-center justify-center w-12 h-12 bg-white/20 backdrop-blur-md rounded-full text-white hover:bg-white hover:text-blue-600 transition-all">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div
+                        class="hover-card group relative h-[320px] rounded-[32px] overflow-hidden shadow-lg transition-all duration-500 hover:-translate-y-2">
+                        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                            style="background-image:url('assets/images/tours/best paris.jpg')"></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-blue-900/90 via-slate-900/20 to-transparent">
+                        </div>
+
+                        <div class="absolute inset-0 p-8 flex flex-col justify-end">
+                            <h3 class="text-2xl font-black text-white mb-1">Paris</h3>
+                            <p class="text-white/70 text-sm mb-4">Fransa, Avropa</p>
+                            <a href="tours.html?cat=azal"
+                                class="inline-flex items-center justify-center w-12 h-12 bg-white/20 backdrop-blur-md rounded-full text-white hover:bg-white hover:text-blue-600 transition-all">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Populyar Cruise & Tətil Paketləri -->
+        <section class="tour-packages-section" data-aos="fade-up" data-aos-delay="250">
+            <h2>Populyar Cruise & Tətil Paketləri</h2>
+            <div class="carousel-wrapper">
+                <button class="carousel-btn prev">&#10094;</button>
+                <div class="scroll-carousel" id="tour-carousel">
+                    <!-- Dinamik card-lar buraya gələcək, amma statik olaraq saxladım -->
+                    <div class="tour-card">
+                        <img src="assets/images/tours/Cruise Galapagos.jpg" alt="Galapagos Cruise: Coral I and II"
+                            class="tour-image">
+                        <div class="tour-overlay">
+                            <div class="tour-content">
+                                <h3>Galapagos Cruise: Coral I and II - Foreigners 5D 4N</h3>
+                                <p>1 İstiqamət • 4 Gecə</p>
+                                <span class="old-price">₼20,891</span>
+                                <span class="price">₼10,445 Bir nəfər üçün</span>
+                                <a href="#" class="hover-btn">İstiqamətə bax</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tour-card">
+                        <img src="assets/images/tours/Galapagos.png"
+                            alt="Legend Cruise: Galapagos 5D 4N - For Foreigners" class="tour-image">
+                        <div class="tour-overlay">
+                            <div class="tour-content">
+                                <h3>Legend Cruise: Galapagos 5D 4N - For Foreigners</h3>
+                                <p>1 İstiqamət • 4 Gecə</p>
+                                <span class="old-price">₼20,891</span>
+                                <span class="price">₼10,445 Bir nəfər üçün</span>
+                                <a href="#" class="hover-btn">İstiqamətə bax</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tour-card">
+                        <img src="assets/images/tours/Galapagos Cruise.jpg"
+                            alt="Legend Cruise: Galapagos 5D 4N - For Latinos" class="tour-image">
+                        <div class="tour-overlay">
+                            <div class="tour-content">
+                                <h3>Legend Cruise: Galapagos 5D 4N - For Latinos</h3>
+                                <p>1 İstiqamət • 4 Gecə</p>
+                                <span class="old-price">₼18,512</span>
+                                <span class="price">₼9,256 Bir nəfər üçün</span>
+                                <a href="#" class="hover-btn">İstiqamətə bax</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tour-card">
+                        <img src="assets/images/tours/two wheels.jpg" alt="Two Wheels Fair" class="tour-image">
+                        <div class="tour-overlay">
+                            <div class="tour-content">
+                                <h3>Two Wheels Fair</h3>
+                                <p>1 İstiqamət • 3 Gecə</p>
+                                <span class="old-price">₼674</span>
+                                <span class="price">₼337 Bir nəfər üçün</span>
+                                <a href="#" class="hover-btn">İstiqamətə bax</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tour-card">
+                        <img src="assets/images/tours/3 Pearls of the Colombian Caribbean.jpg"
+                            alt="3 Pearls of the Colombian Caribbean CTG + BAQ + SMR 2026" class="tour-image">
+                        <div class="tour-overlay">
+                            <div class="tour-content">
+                                <h3>3 Pearls of the Colombian Caribbean CTG + BAQ + SMR 2026</h3>
+                                <p>3 İstiqamət • 7 Gecə</p>
+                                <span class="old-price">₼2,539</span>
+                                <span class="price">₼1,270 Bir nəfər üçün</span>
+                                <a href="#" class="hover-btn">İstiqamətə bax</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tour-card">
+                        <img src="assets/images/tours/Catamarca Tour.jpg" alt="Catamarca Tour : Puna"
+                            class="tour-image">
+                        <div class="tour-overlay">
+                            <div class="tour-content">
+                                <h3>Catamarca Tour : Puna</h3>
+                                <p>3 İstiqamət • 4 Gecə</p>
+                                <span class="old-price">₼4,241</span>
+                                <span class="price">₼2,120 Bir nəfər üçün</span>
+                                <a href="#" class="hover-btn">İstiqamətə bax</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tour-card">
+                        <img src="assets/images/tours/Catamarca Tour.jpg" alt="Catamarca Tour: Valle Central & Fiambalá"
+                            class="tour-image">
+                        <div class="tour-overlay">
+                            <div class="tour-content">
+                                <h3>Catamarca Tour: Valle Central & Fiambalá</h3>
+                                <p>1 İstiqamət • 3 Gecə</p>
+                                <span class="old-price">₼3,393</span>
+                                <span class="price">₼1,696 Bir nəfər üçün</span>
+                                <a href="#" class="hover-btn">İstiqamətə bax</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tour-card">
+                        <img src="assets/images/tours/HONG KONG.jpg" alt="HONG KONG Y FERIA DE CANTON - CHINA"
+                            class="tour-image">
+                        <div class="tour-overlay">
+                            <div class="tour-content">
+                                <h3>HONG KONG Y FERIA DE CANTON - CHINA</h3>
+                                <p>2 İstiqamət • 6 Gecə • 1 Nəqliyyat</p>
+                                <span class="old-price">₼9,416</span>
+                                <span class="price">₼4,708 Bir nəfər üçün</span>
+                                <a href="#" class="hover-btn">İstiqamətə bax</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tour-card">
+                        <img src="assets/images/tours/FERIA DE CANTON COMPLETO.jpg"
+                            alt="FERIA DE CANTON COMPLETO - CHINA" class="tour-image">
+                        <div class="tour-overlay">
+                            <div class="tour-content">
+                                <h3>FERIA DE CANTON COMPLETO - CHINA</h3>
+                                <p>3 İstiqamət • 9 Gecə • 1 Nəqliyyat</p>
+                                <span class="old-price">₼12,291</span>
+                                <span class="price">₼6,145 Bir nəfər üçün</span>
+                                <a href="#" class="hover-btn">İstiqamətə bax</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-btn next">&#10095;</button>
+            </div>
+        </section>
+        <!-- WHY CHOOSE US -->
+        <section class="py-24 bg-[#0a1128] text-white overflow-hidden" data-aos="fade-up" data-aos-delay="300">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col lg:flex-row items-center gap-16">
+
+                    <div class="w-full lg:w-1/2 relative group">
+                        <div
+                            class="absolute -inset-4 bg-blue-600/20 rounded-[40px] blur-2xl group-hover:bg-blue-600/30 transition duration-500">
+                        </div>
+
+                        <div
+                            class="relative h-[450px] rounded-[40px] overflow-hidden border border-white/10 shadow-2xl bg-black">
+                            <video id="whyUsVideo" src="assets/images/backgrounds/hero (3).mp4"
+                                class="w-full h-full object-cover opacity-80" loop muted playsinline>
+                            </video>
+
+                            <div
+                                class="absolute inset-0 flex items-center justify-center group-hover:bg-black/20 transition-all duration-300">
+                                <button id="videoControlBtn"
+                                    class="w-20 h-20 flex items-center justify-center bg-white/10 backdrop-blur-md border border-white/30 rounded-full text-white text-2xl hover:scale-110 hover:bg-blue-600 transition-all duration-300">
+                                    <i class="fa-solid fa-play" id="playIcon"></i>
+                                </button>
+                            </div>
+
+                            <button id="videoMuteBtn"
+                                class="absolute bottom-6 left-6 w-10 h-10 flex items-center justify-center bg-black/40 backdrop-blur-md rounded-xl text-white hover:bg-blue-600 transition-all">
+                                <i class="fa-solid fa-volume-xmark" id="muteIcon"></i>
+                            </button>
+
+                            <div
+                                class="absolute inset-0 pointer-events-none bg-gradient-to-t from-[#0a1128]/60 to-transparent">
+                            </div>
+                        </div>
+
+                        <div
+                            class="absolute -bottom-6 -right-6 bg-blue-600 p-6 rounded-[24px] shadow-xl hidden md:block z-20">
+                            <p class="text-3xl font-black text-white">15+</p>
+                            <p class="text-[10px] font-bold uppercase tracking-wider text-white/80">İllik Təcrübə</p>
+                        </div>
+                    </div>
+                    <div class="w-full lg:w-1/2">
+                        <span class="text-blue-500 font-black uppercase tracking-[0.3em] text-[10px] mb-4 block">Avenora
+                            Travel Haqqında</span>
+                        <h2 class="text-4xl md:text-5xl font-black mb-8 leading-tight uppercase">
+                            Niyə Məhz <span class="text-blue-500">Biz?</span>
+                        </h2>
+
+                        <div class="space-y-6 text-slate-300 leading-relaxed text-lg">
+                            <p>
+                                2009-cu ildə əsası qoyulan <strong class="text-white">Avenora Travel</strong> sadə bir
+                                missiya ilə yola çıxdı: dünya səviyyəli səyahət təcrübələrini hər kəs üçün əlçatan
+                                etmək. Kiçik bir komanda ilə başlayan bu yolçuluq, bu gün turizm sahəsində etimad
+                                qazanmış bir brendə çevrilib.
+                            </p>
+                            <p>
+                                İllər ərzində minlərlə səyyahın xəyallarını gerçəkləşdirdik. Sakit çimərliklərdən tutmuş
+                                canlı mədəniyyət mərkəzlərinə qədər ən maraqlı istiqamətləri seçirik. Tur paketlərimiz
+                                sizin rahatlığınız və təhlükəsizliyiniz ön plana çəkilərək hazırlanır.
+                            </p>
+                            <p class="text-sm border-l-2 border-blue-500 pl-4 italic">
+                                Bu gün biz yeniliklər etməyə davam edirik və hər bir turumuzda sizin xəyallarınızı
+                                işimizin mərkəzinə qoyuruq.
+                            </p>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-6 mt-10">
+                            <div class="flex items-center gap-3">
+                                <i class="fa-solid fa-check-circle text-blue-500"></i>
+                                <span class="text-sm font-bold">Peşəkar Bələdçilər</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i class="fa-solid fa-check-circle text-blue-500"></i>
+                                <span class="text-sm font-bold">7/24 Dəstək</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <!-- SERVICES SECTION -->
+        <section class="py-20 bg-white" data-aos="fade-up">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-navy">Xidmətlərimiz</h2>
+                    <p class="text-gray-500 mt-4 text-lg">Səyahətiniz üçün hər detalı düşünülmüş tam paket həllər</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                    <div
+                        class="p-8 border border-gray-100 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 group">
+                        <img src="assets/images/icons/icons8-plane.gif" class="w-16 h-16 mb-6" alt="Bilet">
+                        <h3 class="text-xl font-bold text-navy mb-3 group-hover:text-blue-600">Aviabilet və Otel</h3>
+                        <p class="text-gray-600 leading-relaxed">Bütün istiqamətlərə aviabiletlərin (o cümlədən çarter)
+                            və dünya üzrə otellərin sürətli rezervasiyası.</p>
+                    </div>
+                    <div
+                        class="p-8 border border-gray-100 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 group">
+                        <img src="assets/images/icons/icons8-car.gif" class="w-16 h-16 mb-6" alt="Nəqliyyat">
+                        <h3 class="text-xl font-bold text-navy mb-3 group-hover:text-blue-600">Nəqliyyat Xidməti</h3>
+                        <p class="text-gray-600 leading-relaxed">Hava limanından transfer və hər növ lüks nəqliyyat
+                            vasitələrinin fərdi təşkili.</p>
+                    </div>
+                    <div
+                        class="p-8 border border-gray-100 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 group">
+                        <img src="assets/images/icons/icons8-briefcase.gif" class="w-16 h-16 mb-6" alt="Biznes">
+                        <h3 class="text-xl font-bold text-navy mb-3 group-hover:text-blue-600">Biznes Səfərləri</h3>
+                        <p class="text-gray-600 leading-relaxed">Şirkətlər üçün qrup və fərdi şəkildə işgüzar səfərlərin
+                            peşəkar planlaşdırılması.</p>
+                    </div>
+                    <div
+                        class="p-8 border border-gray-100 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 group">
+                        <img src="assets/images/icons/icons8-badge.gif" class="w-16 h-16 mb-6" alt="Viza">
+                        <h3 class="text-xl font-bold text-navy mb-3 group-hover:text-blue-600">Viza Dəstəyi</h3>
+                        <p class="text-gray-600 leading-relaxed">Sənədlərin tam hazırlanması və müraciət prosesinin
+                            sonadək izlənilməsi.</p>
+                    </div>
+                    <div
+                        class="p-8 border border-gray-100 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 group">
+                        <img src="assets/images/icons/icons8-conference.gif" class="w-16 h-16 mb-6" alt="Konfrans">
+                        <h3 class="text-xl font-bold text-navy mb-3 group-hover:text-blue-600">Konfranslar</h3>
+                        <p class="text-gray-600 leading-relaxed">Yerli və beynəlxalq səviyyəli konfransların, seminar və
+                            forumların təşkili.</p>
+                    </div>
+                    <div
+                        class="p-8 border border-gray-100 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 group">
+                        <img src="assets/images/icons/icons8-calendar.gif" class="w-16 h-16 mb-6" alt="Tədbir">
+                        <h3 class="text-xl font-bold text-navy mb-3 group-hover:text-blue-600">Korporativ Tədbirlər</h3>
+                        <p class="text-gray-600 leading-relaxed">Şirkətdaxili motivasiya tədbirlərinin və xüsusi
+                            günlərin unudulmaz təşkili.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- PARTNERS -->
+        <section class="py-12 bg-gray-50 border-t border-gray-100">
+            <div class="container mx-auto px-6">
+                <p class="text-center text-gray-400 text-sm mb-8 uppercase tracking-widest">Rəsmi Tərəfdaşlarımız</p>
+                <div class="flex flex-wrap justify-center items-center gap-12 opacity-60">
+                    <a href="https://www.azal.az" target="_blank"
+                        class="grayscale hover:grayscale-0 transition duration-300">
+                        <img src="assets/images/about/partnyor/azerbaijan_airlines-logo_brandlogos.net_vh0bn.png"
+                            alt="AZAL" class="h-10">
+                    </a>
+                    <a href="https://www.turkishairlines.com" target="_blank"
+                        class="grayscale hover:grayscale-0 transition duration-300">
+                        <img src="assets/images/about/partnyor/Turkish_Airlines_logo_2019_compact.svg.png" alt="THY"
+                            class="h-10">
+                    </a>
+                    <a href="https://www.qatarairways.com" target="_blank"
+                        class="grayscale hover:grayscale-0 transition duration-300">
+                        <img src="assets/images/about/partnyor/Qatar_Airways_Logo.png" alt="Qatar Airways" class="h-10">
+                    </a>
+                    <a href="https://www.emirates.com" target="_blank"
+                        class="grayscale hover:grayscale-0 transition duration-300">
+                        <img src="assets/images/about/partnyor/ek.png" alt="Emirates" class="h-10">
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <!-- FOOTER -->
+    <footer class="bg-[#0a1128] text-gray-400 font-sans border-t border-white/5">
+        <div class="container mx-auto px-6 md:px-12 pt-20 pb-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+
+                <div class="space-y-6">
+                    <a href="/" class="inline-block">
+                        <img src="assets/images/logo/extension_icon (1).png" alt="Avenora Logo"
+                            class="h-12 w-auto brightness-110">
+                    </a>
+                    <p class="text-sm leading-relaxed max-w-xs opacity-80 hover:opacity-100 transition-opacity">
+                        Xəyallarınızdakı səyahəti bizimlə planlaşdırın. Dünyanın hər nöqtəsinə peşəkar və lüks turizm
+                        xidmətləri təklif edirik.
+                    </p>
+                    <div class="flex gap-4 pt-2">
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all duration-300 border border-white/10">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-pink-600 hover:text-white transition-all duration-300 border border-white/10">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-blue-400 hover:text-white transition-all duration-300 border border-white/10">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-red-600 hover:text-white transition-all duration-300 border border-white/10">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4
+                        class="text-white text-lg font-bold mb-8 relative inline-block after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-8 after:h-0.5 after:bg-blue-500">
+                        Sürətli Keçidlər
+                    </h4>
+                    <ul class="space-y-4 text-sm font-medium">
+                        <li><a href="index.html"
+                                class="hover:text-blue-400 hover:translate-x-2 transition-all inline-block">Ana
+                                Səhifə</a></li>
+                        <li><a href="tours.html"
+                                class="hover:text-blue-400 hover:translate-x-2 transition-all inline-block">Turlarımız</a>
+                        </li>
+                        <li><a href="about.html"
+                                class="hover:text-blue-400 hover:translate-x-2 transition-all inline-block">Haqqımızda</a>
+                        </li>
+                        <li><a href="media.html"
+                                class="hover:text-blue-400 hover:translate-x-2 transition-all inline-block">Blog &
+                                Media</a></li>
+                        <li><a href="contact.html"
+                                class="hover:text-blue-400 hover:translate-x-2 transition-all inline-block">Əlaqə</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4
+                        class="text-white text-lg font-bold mb-8 relative inline-block after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-8 after:h-0.5 after:bg-blue-500">
+                        Səyahət Növləri
+                    </h4>
+                    <ul class="space-y-4 text-sm font-medium">
+                        <li><a href="#" class="hover:text-white transition">Çimərlik İstirahəti</a></li>
+                        <li><a href="#" class="hover:text-white transition">Mədəni Turlar</a></li>
+                        <li><a href="#" class="hover:text-white transition">Macəra Dolu Səyahətlər</a></li>
+                        <li><a href="#" class="hover:text-white transition">Lüks Paketlər</a></li>
+                        <li><a href="#" class="hover:text-white transition">Korporativ Turlar</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4
+                        class="text-white text-lg font-bold mb-8 relative inline-block after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-8 after:h-0.5 after:bg-blue-500">
+                        Əlaqə
+                    </h4>
+                    <ul class="space-y-5 text-sm">
+                        <li class="flex items-start gap-4 group">
+                            <div
+                                class="w-8 h-8 rounded-lg bg-blue-600/10 flex items-center justify-center text-blue-500 group-hover:bg-blue-600 group-hover:text-white transition">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <span class="pt-1">office@avenora.az</span>
+                        </li>
+                        <li class="flex items-start gap-4 group">
+                            <div
+                                class="w-8 h-8 rounded-lg bg-blue-600/10 flex items-center justify-center text-blue-500 group-hover:bg-blue-600 group-hover:text-white transition">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <span class="pt-1 leading-relaxed">+994 77 721 95 55<br><span
+                                    class="text-xs opacity-60">Dəstək: 24/7</span></span>
+                        </li>
+                        <li class="flex items-start gap-4 group">
+                            <div
+                                class="w-8 h-8 rounded-lg bg-blue-600/10 flex items-center justify-center text-blue-500 group-hover:bg-blue-600 group-hover:text-white transition">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <span class="pt-1 leading-relaxed">Cəfər Cabbarlı küç. 43,<br>Deluxe Plaza, 4-cü
+                                mərtəbə</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div
+                class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs tracking-wider opacity-60">
+                <p>© 2026 Avenora Travel. Bütün hüquqlar qorunur.</p>
+                <div class="flex gap-6">
+                    <a href="#" class="hover:text-white transition">Məxfilik Siyasəti</a>
+                    <a href="#" class="hover:text-white transition">İstifadə Şərtləri</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script src="assets/js/components/navbar.js"></script>
+    <script src="assets/js/components/slider.js"></script>
+
+    <script src="assets/js/pages/home.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <script>
+        // AOS-u hər şey yüklənəndən sonra başladırıq
+        window.addEventListener('load', () => {
+            AOS.init({
+                duration: 800,
+                once: true,
+                easing: 'ease-out',
+                offset: 120
+            });
+        });
+    </script>
+</body>
+
+</html>

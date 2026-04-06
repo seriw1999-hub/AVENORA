@@ -1,0 +1,8 @@
+/* badges.css - Badge styles */
+.badge {
+    padding: 6px 12px;
+    border-radius: var(--badge-radius);
+    background: var(--light-blue);
+    color: var(--dark-navy);
+    font-size: 0.8rem;
+}

@@ -1,0 +1,40 @@
+/* sections.css - General section styles */
+section {
+    padding: 80px 5%;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.section-header h2 {
+    font-size: 28px;
+    color: var(--dark-navy);
+    margin-bottom: 6px;
+}
+
+.section-header p {
+    color: #16161b69;
+    font-size: 15px;
+}
+
+.btn-outline {
+    background: var(--light-blue);
+    color: var(--white);
+    padding: 12px 22px;
+    border-radius: var(--btn-radius);
+    transition: var(--transition);
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-outline:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.342);
+}

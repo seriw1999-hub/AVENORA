@@ -1,0 +1,16 @@
+/* variables.css - All root variables and constants */
+@import url('https://fonts.googleapis.com/css2?family=Trocchi&display=swap');
+
+:root {
+    --light-blue: #8CB8D2;
+    --dark-navy: #16161B;
+    --white: #FFFFFF;
+    --light-lavender: #EBEDFA;
+
+    --card-radius: 20px;
+    --btn-radius: 22px;
+    --input-radius: 12px;
+    --badge-radius: 8px;
+
+    --transition: all 0.3s ease;
+}

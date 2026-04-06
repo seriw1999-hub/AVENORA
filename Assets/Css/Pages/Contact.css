@@ -1,0 +1,17 @@
+/* Giriş hissəsi üçün fon tündləşdirmə */
+.bg-navy {
+    background-color: #0a1128;
+}
+
+/* Giriş sahələrinin hover effekti */
+input:focus, textarea:focus {
+    background-color: #fff !important;
+    box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.1);
+}
+
+/* Xəritənin mobildə hündürlüyü */
+@media (max-width: 768px) {
+    iframe {
+        height: 350px;
+    }
+}

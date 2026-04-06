@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="az">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avenora Travel</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Trocchi&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- CSS – sırayla yüklənir, ən ümumi → ən xüsusi -->
+    <link rel="stylesheet" href="assets/css/base/reset.css">
+    <link rel="stylesheet" href="assets/css/base/typography.css">
+    <link rel="stylesheet" href="assets/css/base/variables.css">
+
+    <link rel="stylesheet" href="assets/css/components/buttons.css">
+    <link rel="stylesheet" href="assets/css/components/card.css">
+    <link rel="stylesheet" href="assets/css/components/navbar.css">
+    <link rel="stylesheet" href="assets/css/components/scroll-carousel.css">
+    <!-- digər komponentlər -->
+
+    <link rel="stylesheet" href="assets/css/layout/grid.css">
+    <link rel="stylesheet" href="assets/css/layout/header.css">
+    <link rel="stylesheet" href="assets/css/layout/footer.css">
+    <link rel="stylesheet" href="assets/css/layout/sections.css">
+
+    <!-- səhifəyə xas -->
+    <link rel="stylesheet" href="assets/css/pages/tours-detal.css">
+
+    <!-- ən sonda main – override üçün -->
+    <link rel="stylesheet" href="assets/css/main.css">
+
+    <link rel="icon" type="image/png" href="assets/images/logo/extension_icon (1).png">
+</head>
+
+<body class="bg-[#F8FAFC] font-['Plus_Jakarta_Sans']">
+    <!-- Navigation -->
+    <header
+        class="navbar fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-xl border-b border-gray-200/80 shadow-sm">
+        <nav class="container mx-auto px-6 flex items-center justify-between h-16">
+            <!-- Logo -->
+            <a href="index.html" class="flex items-center gap-2.5">
+                <img src="assets/images/logo/extension_icon (1).png" alt="Avenora" class="h-8 w-auto">
+                <span class="text-xl font-bold text-gray-900">
+                    Avenora <span class="text-blue-600">Travel</span>
+                </span>
+            </a>
+
+            <!-- Desktop Links – mərkəzdə -->
+
+            <a href="index.html" class="nav-link text-gray-700 hover:text-blue-600 font-medium transition">Ana
+                səhifə</a>
+            <a href="tours.html" class="nav-link text-gray-700 hover:text-blue-600 font-medium transition">Turlar</a>
+            <a href="about.html"
+                class="nav-link text-gray-700 hover:text-blue-600 font-medium transition">Haqqımızda</a>
+            <a href="contact.html" class="nav-link text-gray-700 hover:text-blue-600 font-medium transition">Əlaqə</a>
+            <a href="auth.html" class="nav-link text-gray-700 hover:text-blue-600 font-medium transition">Giriş</a>
+
+            </div>
+            <button class="reserve-btn bg-none text-blue-600 px-8 py-4 rounded-xl font-bold border-2 border-blue-600 hover:bg-blue-600 hover:text-white transition-all">
+                İNDİ REZERV ET
+            </button>
+            <button onclick="openSidePanel('fav')"
+                class="relative p-3 bg-white rounded-2xl shadow-sm border border-slate-100 hover:bg-pink-50 transition-all group">
+                <i class="fa-solid fa-heart text-slate-600 group-hover:text-red-500"></i>
+                <span id="fav-badge"
+                    class="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] font-black w-5 h-5 flex items-center justify-center rounded-full hidden">
+                    0
+                </span>
+            </button>
+            <!-- User Area (sağda) -->
+            <div class="flex items-center gap-4">
+                <div id="user-menu-desktop" class="relative">
+                    <!-- JS ilə doldurulacaq -->
+                </div>
+
+                <!-- Mobile hamburger -->
+                <button id="mobile-toggle" class="md:hidden text-gray-700 focus:outline-none">
+                    <svg id="menu-icon" class="h-7 w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                    <svg id="close-icon" class="h-7 w-7 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t shadow-lg">
+            <div class="container mx-auto px-6 py-5 flex flex-col gap-5">
+                <a href="index.html" class="text-lg text-gray-700 hover:text-blue-600">Ana səhifə</a>
+                <a href="tours.html" class="text-lg text-gray-700 hover:text-blue-600">Turlar</a>
+                <a href="about.html" class="text-lg text-gray-700 hover:text-blue-600">Haqqımızda</a>
+                <a href="contact.html" class="text-lg text-gray-700 hover:text-blue-600">Əlaqə</a>
+                <a href="auth.html" class="text-lg text-gray-700 hover:text-blue-600">Giriş</a>
+                <div id="user-menu-mobile" class="flex flex-col gap-4 pt-4 border-t">
+
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Tur Detalları -->
+    <main id="tours-detal-container">
+        <div class="flex items-center justify-center h-screen">
+            <div class="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-600"></div>
+        </div>
+        <h1 class="text-4xl font-black text-slate-900">Dubay Möcüzələri</h1>
+
+        <span class="tour-price text-3xl font-black text-blue-600">1200</span>
+
+        <img src="assets/images/tours/dubai.jpg" class="tour-hero-img ...">
+
+        <button class="reserve-btn bg-blue-600 text-white px-8 py-4 rounded-xl font-bold">
+            İNDİ REZERV ET
+        </button>
+    </main>
+
+    <section id="related-section" class="py-20 bg-slate-50 hidden">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex items-center justify-between mb-10">
+                <div>
+                    <h2 class="text-3xl font-black text-slate-900">Bənzər Turlar</h2>
+                    <p class="text-slate-500 mt-2">Sizin üçün seçdiyimiz digər maraqlı istiqamətlər</p>
+                </div>
+            </div>
+            <div id="related-tours-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            </div>
+        </div>
+    </section>
+    <!-- FOOTER -->
+    <footer class="bg-[#0a1128] text-gray-400 font-sans border-t border-white/5">
+        <div class="container mx-auto px-6 md:px-12 pt-20 pb-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+
+                <div class="space-y-6">
+                    <a href="/" class="inline-block">
+                        <img src="assets/images/logo/extension_icon (1).png" alt="Avenora Logo"
+                            class="h-12 w-auto brightness-110">
+                    </a>
+                    <p class="text-sm leading-relaxed max-w-xs opacity-80 hover:opacity-100 transition-opacity">
+                        Xəyallarınızdakı səyahəti bizimlə planlaşdırın. Dünyanın hər nöqtəsinə peşəkar və
+                        lüks turizm
+                        xidmətləri təklif edirik.
+                    </p>
+                    <div class="flex gap-4 pt-2">
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all duration-300 border border-white/10">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-pink-600 hover:text-white transition-all duration-300 border border-white/10">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-blue-400 hover:text-white transition-all duration-300 border border-white/10">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-red-600 hover:text-white transition-all duration-300 border border-white/10">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4
+                        class="text-white text-lg font-bold mb-8 relative inline-block after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-8 after:h-0.5 after:bg-blue-500">
+                        Sürətli Keçidlər
+                    </h4>
+                    <ul class="space-y-4 text-sm font-medium">
+                        <li><a href="index.html"
+                                class="hover:text-blue-400 hover:translate-x-2 transition-all inline-block">Ana
+                                Səhifə</a></li>
+                        <li><a href="tours.html"
+                                class="hover:text-blue-400 hover:translate-x-2 transition-all inline-block">Turlarımız</a>
+                        </li>
+                        <li><a href="about.html"
+                                class="hover:text-blue-400 hover:translate-x-2 transition-all inline-block">Haqqımızda</a>
+                        </li>
+                        <li><a href="media.html"
+                                class="hover:text-blue-400 hover:translate-x-2 transition-all inline-block">Blog
+                                &
+                                Media</a></li>
+                        <li><a href="contact.html"
+                                class="hover:text-blue-400 hover:translate-x-2 transition-all inline-block">Əlaqə</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4
+                        class="text-white text-lg font-bold mb-8 relative inline-block after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-8 after:h-0.5 after:bg-blue-500">
+                        Səyahət Növləri
+                    </h4>
+                    <ul class="space-y-4 text-sm font-medium">
+                        <li><a href="#" class="hover:text-white transition">Çimərlik İstirahəti</a></li>
+                        <li><a href="#" class="hover:text-white transition">Mədəni Turlar</a></li>
+                        <li><a href="#" class="hover:text-white transition">Macəra Dolu Səyahətlər</a></li>
+                        <li><a href="#" class="hover:text-white transition">Lüks Paketlər</a></li>
+                        <li><a href="#" class="hover:text-white transition">Korporativ Turlar</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4
+                        class="text-white text-lg font-bold mb-8 relative inline-block after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-8 after:h-0.5 after:bg-blue-500">
+                        Əlaqə
+                    </h4>
+                    <ul class="space-y-5 text-sm">
+                        <li class="flex items-start gap-4 group">
+                            <div
+                                class="w-8 h-8 rounded-lg bg-blue-600/10 flex items-center justify-center text-blue-500 group-hover:bg-blue-600 group-hover:text-white transition">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <span class="pt-1">office@avenora.az</span>
+                        </li>
+                        <li class="flex items-start gap-4 group">
+                            <div
+                                class="w-8 h-8 rounded-lg bg-blue-600/10 flex items-center justify-center text-blue-500 group-hover:bg-blue-600 group-hover:text-white transition">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <span class="pt-1 leading-relaxed">+994 77 721 95 55<br><span
+                                    class="text-xs opacity-60">Dəstək: 24/7</span></span>
+                        </li>
+                        <li class="flex items-start gap-4 group">
+                            <div
+                                class="w-8 h-8 rounded-lg bg-blue-600/10 flex items-center justify-center text-blue-500 group-hover:bg-blue-600 group-hover:text-white transition">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <span class="pt-1 leading-relaxed">Cəfər Cabbarlı küç. 43,<br>Deluxe Plaza, 4-cü
+                                mərtəbə</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div
+                class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs tracking-wider opacity-60">
+                <p>© 2026 Avenora Travel. Bütün hüquqlar qorunur.</p>
+                <div class="flex gap-6">
+                    <a href="#" class="hover:text-white transition">Məxfilik Siyasəti</a>
+                    <a href="#" class="hover:text-white transition">İstifadə Şərtləri</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- js kodlari -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="assets/js/pages/tours-detal.js"></script>
+    <script src="assets/js/data/tours-data.js"></script>
+    <script src="assets/js/components/navbar.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            easing: 'ease-out'
+        });
+    </script>
+</body>
+
+</html>

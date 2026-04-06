@@ -1,0 +1,35 @@
+footer {
+    background: #0a1128; /* Tünd Navy rəngi */
+    color: #94a3b8; /* Gray-400 */
+}
+
+/* Linklərin altından gələn xətt animasiyası (opsional) */
+.footer-link-hover {
+    position: relative;
+    transition: all 0.3s;
+}
+
+.footer-link-hover::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: -2px;
+    left: 0;
+    background-color: #3b82f6;
+    transition: width 0.3s ease-in-out;
+}
+
+.footer-link-hover:hover::after {
+    width: 100%;
+}
+
+/* Responsive tənzimləmə */
+@media (max-width: 768px) {
+    footer {
+        text-align: left; /* Mobildə də sola tərəf daha müasir görünür */
+    }
+    .grid {
+        gap: 3rem;
+    }
+}

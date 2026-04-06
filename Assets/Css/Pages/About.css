@@ -1,0 +1,114 @@
+/* WHY CHOOSE US */
+.why-choose-us {
+    background: var(--dark-navy);
+    color: var(--white);
+}
+
+.flex-container {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.image-side img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--card-radius);
+}
+
+.text-side h2 {
+    color: var(--light-blue);
+}
+
+/* OUR SERVICES */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.service-card {
+    background: var(--white);
+    padding: 20px;
+    text-align: center;
+    border-radius: var(--card-radius);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.service-card img {
+    width: 50px;
+    height: 50px;
+}
+
+/* CLIENTS */
+.clients-logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.clients-logos img {
+    max-width: 150px;
+    height: auto;
+}
+
+/* Hero Overlay Gradient */
+.hero-gradient {
+    background: linear-gradient(rgba(26, 26, 46, 0.7), rgba(26, 26, 46, 0.7));
+}
+
+/* Şəkil effektləri */
+.office-img {
+    transition: transform 0.5s ease;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.office-img:hover {
+    transform: translateY(-10px);
+}
+
+.counter {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--light-blue);
+}
+/* Kartın aktiv vəziyyəti */
+    .office-card.active .info-overlay {
+        transform: translateY(0);
+    }
+
+    .office-card.active img {
+        scale: 1.1;
+        filter: blur(2px);
+    }
+
+    .info-overlay {
+        backdrop-filter: blur(4px);
+    }
+
+    /* Kart üzərinə gələndə kiçik animasiya */
+    .office-card:not(.active):hover img {
+        transform: scale(1.05);
+    }
+
+  /* Standart CSS keçidləri */
+    .active-tab {
+        background-color: #1e3a8a !important; /* Navy */
+        color: white !important;
+        box-shadow: 0 10px 15px -3px rgba(30, 58, 138, 0.3);
+    }
+    .blog-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
+    }
+    .tab-btn:hover:not(.active-tab) {
+        background-color: #f8fafc;
+        color: #1e3a8a;
+    }
+    /* Animasiya */
+    @keyframes modalFadeIn {
+        from { opacity: 0; transform: scale(0.95); }
+        to { opacity: 1; transform: scale(1); }
+    }
+    #blogModal > div { animation: modalFadeIn 0.3s ease-out; }

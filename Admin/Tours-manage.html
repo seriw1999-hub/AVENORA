@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <title>Turların İdarə Edilməsi - Avenora</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body class="bg-gray-50 flex">
+    <main class="flex-1 p-8">
+        <div class="flex justify-between items-center mb-6">
+            <h1 class="text-2xl font-bold text-gray-800">Tur Paketləri</h1>
+            <button id="open-tour-modal" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">
+                + Yeni Tur Əlavə Et
+            </button>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-sm border overflow-hidden">
+            <table class="w-full text-left">
+                <thead class="bg-gray-100 text-gray-600 text-sm">
+                    <tr>
+                        <th class="p-4">Turun Adı</th>
+                        <th class="p-4">Kateqoriya</th>
+                        <th class="p-4">Qiymət</th>
+                        <th class="p-4">Viza</th>
+                        <th class="p-4 text-right">Əməliyyatlar</th>
+                    </tr>
+                </thead>
+                <tbody id="tours-table" class="divide-y">
+                    </tbody>
+            </table>
+        </div>
+
+        <div id="tour-dialog" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+            <div class="bg-white rounded-2xl w-full max-w-lg p-6 shadow-2xl">
+                <div class="flex justify-between items-center mb-4 border-b pb-2">
+                    <h2 class="text-xl font-bold">Yeni Tur Formu</h2>
+                    <button id="close-tour-modal" class="text-gray-400 hover:text-red-500 text-2xl">&times;</button>
+                </div>
+                <form id="tour-form" class="space-y-4">
+                    <input type="text" id="tour-name" placeholder="Turun adı" class="w-full p-2 border rounded" required>
+                    <textarea id="tour-desc" placeholder="Açıqlama" class="w-full p-2 border rounded" rows="3"></textarea>
+                    <div class="grid grid-cols-2 gap-4">
+                        <input type="number" id="tour-price" placeholder="Qiymət (AZN)" class="w-full p-2 border rounded" required>
+                        <input type="text" id="tour-category" placeholder="Kateqoriya (ölkə)" class="w-full p-2 border rounded">
+                    </div>
+                    <input type="text" id="tour-image" placeholder="Şəkil linki (URL)" class="w-full p-2 border rounded">
+                    <label class="flex items-center space-x-2 cursor-pointer">
+                        <input type="checkbox" id="tour-visa" class="w-4 h-4">
+                        <span>Viza lazımdır?</span>
+                    </label>
+                    <button type="submit" class="w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-700 font-bold">Yadda Saxla</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script type="module" src="../assets/js/pages/admin.js"></script>
+</body>
+</html>

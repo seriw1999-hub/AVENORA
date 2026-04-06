@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avenora Travel - Admin Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .sidebar-link.active { @apply bg-blue-600 text-white; }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <div class="flex min-h-screen">
+        <aside class="w-64 bg-slate-900 text-white hidden md:flex flex-col">
+            <div class="p-6 flex items-center space-x-3 border-b border-slate-800">
+               <img src="../assets/images/logo/extension_icon (1).png" alt="logo" class="w-8 h-8"> 
+                <span class="text-xl font-bold">Avenora Admin</span>
+            </div>
+            <nav class="flex-1 p-4 space-y-2">
+                <a href="#" class="flex items-center space-x-3 p-3 rounded-lg bg-blue-600 text-white">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>
+                    <span>Dashboard</span>
+                </a>
+                <a href="tours-manage.html" class="flex items-center space-x-3 p-3 rounded-lg hover:bg-slate-800 transition">
+                    <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" /></svg>
+                    <span>Turlar</span>
+                </a>
+                <a href="../user/bookings.html" class="flex items-center space-x-3 p-3 rounded-lg hover:bg-slate-800 transition">
+                    <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+                    <span>Rezervasiyalar</span>
+                </a>
+            </nav>
+            <div class="p-4 border-t border-slate-800">
+                <a href="../index.html" class="flex items-center space-x-3 p-3 text-gray-400 hover:text-white transition">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7" /></svg>
+                    <span>Sayta qayıt</span>
+                </a>
+            </div>
+        </aside>
+
+        <main class="flex-1 p-8 overflow-y-auto">
+            <header class="flex justify-between items-center mb-8">
+                <div>
+                    <h1 class="text-3xl font-bold text-gray-800">Xoş gəldiniz, Admin!</h1>
+                    <p class="text-gray-500">Bu gün üçün platforma icmalı.</p>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-medium">Sistem Aktiv</span>
+                    <img class="w-10 h-10 rounded-full border-2 border-white shadow-sm" src="https://ui-avatars.com/api/?name=Admin&background=0D8ABC&color=fff" alt="Profile">
+                </div>
+            </header>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                    <p class="text-sm font-medium text-gray-500 mb-1">Toplam Tur</p>
+                    <h3 class="text-3xl font-bold text-gray-800" id="total-tours">...</h3>
+                    <p class="text-xs text-green-600 mt-2">↑ 18% bu ay</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                    <p class="text-sm font-medium text-gray-500 mb-1">Rezervasiyalar</p>
+                    <h3 class="text-3xl font-bold text-gray-800" id="total-bookings">...</h3>
+                    <p class="text-xs text-green-600 mt-2">↑ 12% bu həftə</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                    <p class="text-sm font-medium text-gray-500 mb-1">Aktiv İstifadəçi</p>
+                    <h3 class="text-3xl font-bold text-gray-800" id="active-users">...</h3>
+                    <p class="text-xs text-red-600 mt-2">↓ 3 istifadəçi</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                    <p class="text-sm font-medium text-gray-500 mb-1">Aylıq Gəlir</p>
+                    <h3 class="text-3xl font-bold text-gray-800" id="monthly-revenue">0 AZN</h3>
+                    <p class="text-xs text-green-600 mt-2">↑ 24% artım</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                    <h3 class="text-lg font-bold text-gray-800 mb-4">Gəlir Trendi</h3>
+                    <canvas id="revenue-chart" height="250"></canvas>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                    <h3 class="text-lg font-bold text-gray-800 mb-4">Rezervasiya Statusu</h3>
+                    <canvas id="booking-status-chart" height="250"></canvas>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+                <div class="p-6 border-b border-gray-50 flex justify-between items-center">
+                    <h3 class="text-lg font-bold text-gray-800">Son Rezervasiyalar</h3>
+                    <button class="text-blue-600 text-sm font-semibold hover:underline">Hamısına bax</button>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left">
+                        <thead class="bg-gray-50 text-gray-500 text-sm uppercase">
+                            <tr>
+                                <th class="p-4 font-medium">Tur Adı</th>
+                                <th class="p-4 font-medium">İstifadəçi</th>
+                                <th class="p-4 font-medium">Tarix</th>
+                                <th class="p-4 font-medium">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="recent-bookings-list" class="divide-y divide-gray-100">
+                            </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="module" src="../assets/js/pages/admin-dashboard.js"></script>
+</body>
+</html>

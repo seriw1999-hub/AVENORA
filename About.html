@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="az">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avenora Travel</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Trocchi&display=swap" rel="stylesheet">
+
+    <!-- AOS animasiya -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- CSS – sırayla yüklənir, ən ümumi → ən xüsusi -->
+    <link rel="stylesheet" href="assets/css/base/reset.css">
+    <link rel="stylesheet" href="assets/css/base/typography.css">
+    <link rel="stylesheet" href="assets/css/base/variables.css">
+
+    <link rel="stylesheet" href="assets/css/components/buttons.css">
+    <link rel="stylesheet" href="assets/css/components/card.css">
+    <link rel="stylesheet" href="assets/css/components/navbar.css">
+    <link rel="stylesheet" href="assets/css/components/scroll-carousel.css">
+    <!-- digər komponentlər -->
+
+    <link rel="stylesheet" href="assets/css/layout/grid.css">
+    <link rel="stylesheet" href="assets/css/layout/header.css">
+    <link rel="stylesheet" href="assets/css/layout/footer.css">
+    <link rel="stylesheet" href="assets/css/layout/sections.css">
+
+    <!-- səhifəyə xas -->
+    <link rel="stylesheet" href="assets/css/pages/about.css">
+
+    <!-- ən sonda main – override üçün -->
+    <link rel="stylesheet" href="assets/css/main.css">
+
+    <link rel="icon" type="image/png" href="assets/images/logo/extension_icon (1).png">
+</head>
+
+<body>
+    <header class="navbar fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-xl border-b border-gray-200 shadow-sm">
+    <nav class="container mx-auto px-6 flex items-center justify-between h-16">
+        <a href="index.html" class="flex items-center gap-2">
+            <img src="assets/images/logo/extension_icon (1).png" alt="Avenora" class="h-8 w-auto">
+            <span class="text-xl font-bold text-gray-800">Avenora <span class="text-blue-600">Travel</span></span>
+        </a>
+
+        <div class="hidden md:flex items-center gap-8">
+            <a href="index.html" class="nav-link text-gray-700 hover:text-blue-600 font-medium transition">Ana səhifə</a>
+            <a href="tours.html" class="nav-link text-gray-700 hover:text-blue-600 font-medium transition">Turlar</a>
+            <a href="about.html" class="nav-link text-gray-700 hover:text-blue-600 font-medium transition">Haqqımızda</a>
+            <a href="contact.html" class="nav-link text-gray-700 hover:text-blue-600 font-medium transition">Əlaqə</a>
+            <a href="auth.html" id="main-login-link" class="nav-link text-gray-700 hover:text-blue-600 font-medium transition">Giriş</a>
+        </div>
+
+        <div class="flex items-center gap-4">
+            <div id="user-menu-desktop" class="relative hidden md:block">
+                </div>
+
+            <button id="mobile-toggle" class="md:hidden p-2 text-gray-600 hover:bg-gray-100 rounded-lg transition">
+                <svg id="menu-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+                <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+            </button>
+        </div>
+    </nav>
+
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-lg transition-all duration-300">
+        <div class="px-6 py-6 flex flex-col gap-4">
+            <a href="index.html" class="mobile-link text-gray-700">Ana səhifə</a>
+            <a href="tours.html" class="mobile-link text-gray-700">Turlar</a>
+            <a href="about.html" class="mobile-link text-gray-700">Haqqımızda</a>
+            <a href="contact.html" class="mobile-link text-gray-700">Əlaqə</a>
+            <div id="user-menu-mobile" class="pt-4 border-t border-gray-100">
+                </div>
+        </div>
+    </div>
+</header>
+    <!-- main -->
+    <main class="pt-16">
+        <!-- About Hero -->
+        <section class="relative h-[400px] flex items-center justify-center overflow-hidden">
+            <img src="assets/images/backgrounds/bg hero.png" class="absolute w-full h-full object-cover"
+                alt="About Hero">
+            <div class="absolute inset-0 hero-gradient"></div>
+            <div class="relative z-10 text-center text-white" data-aos="zoom-in">
+                <h1 class="text-5xl md:text-6xl font-heading font-bold mb-4">Dünyanı Bizimlə Kəşf Edin</h1>
+                <p class="text-xl opacity-90">2009-cu ildən bəri səyahət tərəfdaşınız</p>
+            </div>
+        </section>
+        <!-- Biz kimik? -->
+        <section class="py-20 container mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div data-aos="fade-right">
+                    <span class="text-blue-800 font-bold tracking-widest uppercase text-m">Biz kimik?</span>
+                    <h2 class="text-5xl font-heading font-bold mt-4 mb-6 text-navy">Avenora Travel - Sizin
+                        Xəyallarınızın Memarı</h2>
+                    <p class="text-gray-600 leading-relaxed mb-6">
+                        Avenora Travel olaraq 2009-cu ildən bu günə qədər minlərlə insanın səyahət xəyallarını
+                        gerçəkləşdirmişik. Biz sadəcə bilet satmırıq, biz sizə unudulmaz xatirələr və yeni təcrübələr
+                        təklif edirik.
+                    </p>
+                    <p class="text-gray-600 leading-relaxed">
+                        Peşəkar komandamız, dünyanın dörd bir yanındakı partnyor şəbəkəmiz və müştəri məmnuniyyətinə
+                        sadiqliyimiz bizi turizm sahəsində etibarlı brendə çevirmişdir.
+                    </p>
+
+                    <div class="grid grid-cols-3 gap-8 mt-10 border-t border-gray-100 pt-8">
+                        <div class="text-center md:text-left">
+                            <h4 class="text-4xl font-extrabold text-blue-600 mb-1">
+                                <span class="counter" data-target="15">0</span>+
+                            </h4>
+                            <p class="text-sm font-medium text-gray-500 uppercase tracking-wider">İllik Təcrübə</p>
+                        </div>
+                        <div class="text-center md:text-left border-x border-gray-100 px-4">
+                            <h4 class="text-4xl font-extrabold text-blue-600 mb-1">
+                                <span class="counter" data-target="50">0</span>k+
+                            </h4>
+                            <p class="text-sm font-medium text-gray-500 uppercase tracking-wider">Xoşbəxt Müştəri</p>
+                        </div>
+                        <div class="text-center md:text-left">
+                            <h4 class="text-4xl font-extrabold text-blue-600 mb-1">
+                                <span class="counter" data-target="120">0</span>+
+                            </h4>
+                            <p class="text-sm font-medium text-gray-500 uppercase tracking-wider">İstiqamət</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative" data-aos="fade-left">
+                    <img src="assets/images/about/office.png"
+                        class="rounded-2xl office-img w-full h-[650px] object-cover" alt="Avenora Office">
+                    <div class="absolute -bottom-6 -left-6 bg-blue-600 p-6 rounded-xl hidden md:block">
+                        <p class="text-white font-bold">Peşəkar Xidmət,<br>Yüksək Keyfiyyət</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Our Office -->
+        <section class="py-16 bg-gray-50 overflow-hidden">
+            <div class="container mx-auto px-6 relative">
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <h2 class="text-4xl font-heading font-bold text-navy">Ofisimizdə Qonaq Olun</h2>
+                    <p class="text-gray-500 mt-4">Sizi Bakının mərkəzindəki müasir və qonaqpərvər ofisimizdə gözləyirik
+                    </p>
+                </div>
+
+                <div
+                    class="absolute top-0 right-6 bg-white shadow-lg border border-gray-100 p-3 rounded-xl z-10 flex items-center gap-2 animate-bounce">
+                    <span class="text-yellow-400">⭐</span>
+                    <span class="text-navy font-bold text-sm">4.9/5 Müştəri Reytinqi</span>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="office-card group relative h-80 rounded-2xl overflow-hidden shadow-md cursor-pointer"
+                        data-aos="fade-up" data-aos-delay="100">
+                        <img src="assets/images/about/konsulta.png"
+                            class="w-full h-full object-cover transition duration-500" alt="Lobby">
+
+                        <div
+                            class="info-overlay absolute inset-0 bg-blue-600/95 p-6 flex flex-col justify-center items-center text-center translate-y-full transition-transform duration-500 z-20">
+                            <button
+                                class="close-btn absolute top-4 right-4 text-white hover:rotate-90 transition-transform duration-300 text-2xl">&times;</button>
+                            <h3 class="text-white text-xl font-bold mb-3">Peşəkar Konsultasiya</h3>
+                            <p class="text-white/90 text-sm">Səyahət planlarınızı ekspertlərimizlə birlikdə ən xırda
+                                detallarına qədər ofisimizdə planlaşdırın.</p>
+                        </div>
+                    </div>
+
+                    <div class="office-card group relative h-80 rounded-2xl overflow-hidden shadow-md cursor-pointer"
+                        data-aos="fade-up" data-aos-delay="200">
+                        <img src="assets/images/about/ticket.png"
+                            class="w-full h-full object-cover transition duration-500" alt="Reception">
+
+                        <div
+                            class="info-overlay absolute inset-0 bg-blue-600/95 p-6 flex flex-col justify-center items-center text-center translate-y-full transition-transform duration-500 z-20">
+                            <button
+                                class="close-btn absolute top-4 right-4 text-white hover:rotate-90 transition-transform duration-300 text-2xl">&times;</button>
+                            <h3 class="text-white text-xl font-bold mb-3">Sürətli Sənədləşmə</h3>
+                            <p class="text-white/90 text-sm">Viza dəstəyi və bilet təminatı prosedurlarını çayınızı
+                                içərkən biz həll edək.</p>
+                        </div>
+                    </div>
+
+                    <div class="office-card group relative h-80 rounded-2xl overflow-hidden shadow-md cursor-pointer"
+                        data-aos="fade-up" data-aos-delay="300">
+                        <img src="assets/images/about/consultation area.png"
+                            class="w-full h-full object-cover transition duration-500" alt="Consultation Area">
+
+                        <div
+                            class="info-overlay absolute inset-0 bg-blue-600/95 p-6 flex flex-col justify-center items-center text-center translate-y-full transition-transform duration-500 z-20">
+                            <button
+                                class="close-btn absolute top-4 right-4 text-white hover:rotate-90 transition-transform duration-300 text-2xl">&times;</button>
+                            <h3 class="text-white text-xl font-bold mb-3">Rahat Gözləmə Zonası</h3>
+                            <p class="text-white/90 text-sm">Müştərilərimizin rahatlığı üçün xüsusi dizayn edilmiş
+                                müasir gözləmə zalımız.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Missiyamız guvən və təhlükəsizlik -->
+        <section class="py-20 container mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="bg-navy p-10 rounded-3xl text-white shadow-xl shadow-gray-100" data-aos="flip-up">
+                    <div class="w-12 h-12 bg-blue-900 rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-navy">Missiyamız</h3>
+                    <p class="text-gray-600">Hər bir müştərimizə fərdi yanaşaraq, onların büdcə və istəklərinə uyğun ən
+                        mükəmməl səyahət paketlərini təqdim etmək və Azərbaycan turizm bazarında keyfiyyət
+                        standartlarını artırmaqdır.</p>
+                </div>
+                <div class="bg-white border border-gray-100 p-10 rounded-3xl shadow-xl shadow-gray-100"
+                    data-aos="flip-up" data-aos-delay="200">
+                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-navy">Güvən və Təhlükəsizlik</h3>
+                    <p class="text-gray-600">Sizin təhlükəsizliyiniz bizim üçün prioritetdir. Yalnız yoxlanılmış
+                        hotellər və rəsmi hava yolları ilə işləyirik, səyahətinizin hər anında 24/7 dəstək xidməti
+                        göstəririk.</p>
+                </div>
+            </div>
+        </section>
+        <!-- Avenora Komandası -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl font-bold text-navy mb-16">Avenora Komandası</h2>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div class="bg-gray-50 p-8 rounded-3xl flex flex-col md:flex-row items-center gap-8">
+                        <img src="assets/images/about/qurucu.png" class="w-full h-80 object-cover rounded-2xl shadow-lg"
+                            alt="Founder">
+                        <div class="text-left">
+                            <h3 class="text-2xl font-bold text-navy">Cənab Eldar Məmmədov</h3>
+                            <p class="text-blue-600 font-medium mb-4">Baş Direktor & Qurucu</p>
+                            <p class="text-gray-500 italic">"Məqsədimiz səyahəti hər kəs üçün əlçatan və problemsiz
+                                etməkdir."</p>
+                        </div>
+                    </div>
+
+                    <div class="relative group">
+                        <img src="assets/images/about/heyyet.png"
+                            class="w-full h-80 object-cover rounded-3x1 shadow-2xl" alt="Our Team">
+                        <div
+                            class="absolute inset-0 bg-navy/20 group-hover:bg-transparent transition duration-500 rounded-3xl">
+                        </div>
+                        <div class="mt-4 text-center">
+                            <p class="text-navy font-bold">Peşəkar Heyətimiz</p>
+                            <p class="text-gray-500 text-sm">30-dan çox mütəxəssis sizin xidmətinizdədir</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Media Mərkəzi -->
+        <section class="relative h-[400px] flex items-center justify-center overflow-hidden">
+            <div class="absolute inset-0 z-0">
+                <video src="assets/images/about/gallery/blog galery.mp4" class="w-full h-full object-cover" autoplay
+                    muted loop></video>
+                <div class="absolute inset-0 bg-black/60 backdrop-blur-[1px]"></div>
+            </div>
+            <div class="relative z-10 text-center">
+                <h1 class="text-6xl font-extrabold text-white mb-4">Media Mərkəzi</h1>
+                <p class="text-blue-400 font-medium">Ana səhifə • Blog & Qalereya</p>
+            </div>
+        </section>
+<!-- Blog & Qalereya -->
+        <section class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+
+                <div class="flex justify-center mb-16">
+                    <div class="bg-white p-2 rounded-2xl shadow-md border flex gap-2">
+                        <button onclick="switchTab('blog')" id="btn-blog"
+                            class="tab-btn active-tab px-10 py-3 rounded-xl font-bold transition-all">Blog
+                            Yazıları</button>
+                        <button onclick="switchTab('gallery')" id="btn-gallery"
+                            class="tab-btn px-10 py-3 rounded-xl font-bold text-gray-400 transition-all">Foto
+                            Qalereya</button>
+                    </div>
+                </div>
+
+                <div id="blog-content" class="tab-pane">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                        <article
+                            onclick="openBlogModal('istanbul', 'İstanbulun Gizli Xəzinələri', 'Səyahət', '12 Mart 2024', 'assets/images/about/blog/istanbul.jpg')"
+                            class="blog-card bg-white rounded-[2.5rem] shadow-sm overflow-hidden cursor-pointer">
+                            <div class="h-64 overflow-hidden relative">
+                                <img src="assets/images/about/blog/istanbul.jpg"
+                                    class="w-full h-full object-cover hover:scale-110 transition duration-700">
+                                <span
+                                    class="absolute top-5 left-5 bg-orange-500 text-white text-[10px] px-4 py-1.5 rounded-full font-bold uppercase">Səyahət</span>
+                            </div>
+                            <div class="p-8">
+                                <h3 class="text-2xl font-bold text-slate-900 mb-3">İstanbulda Gizli Yerlər</h3>
+                                <p class="text-gray-500 text-sm line-clamp-2">Turist izdihamından uzaq, tarixin
+                                    dərinliklərində gizlənmiş xüsusi məkanlar...</p>
+                                <div class="flex justify-between mt-6 pt-6 border-t border-gray-100 items-center">
+                                    <span class="text-gray-400 text-xs text-slate-900">12 Mart, 2024</span>
+                                    <span class="text-blue-600 font-bold text-sm">Oxu →</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article
+                            onclick="openBlogModal('paris', 'Parisin Romantik Küncləri', 'Mədəniyyət', '5 Aprel 2024', 'assets/images/about/blog/paris.jpg')"
+                            class="blog-card bg-white rounded-[2.5rem] shadow-sm overflow-hidden cursor-pointer">
+                            <div class="h-64 overflow-hidden relative">
+                                <img src="assets/images/about/blog/paris.jpg"
+                                    class="w-full h-full object-cover hover:scale-110 transition duration-700">
+                                <span
+                                    class="absolute top-5 left-5 bg-green-500 text-white text-[10px] px-4 py-1.5 rounded-full font-bold uppercase">Mədəniyyət</span>
+                            </div>
+                            <div class="p-8">
+                                <h3 class="text-2xl font-bold text-slate-900 mb-3">Parisin Romantik Küncləri</h3>
+                                <p class="text-gray-500 text-sm line-clamp-2">Sevgi şəhərinin ən gözəl və az tanınan
+                                    romantik məkanları...</p>
+                                <div class="flex justify-between mt-6 pt-6 border-t border-gray-100 items-center">
+                                    <span class="text-gray-400 text-xs text-slate-900">5 Aprel, 2024</span>
+                                    <span class="text-blue-600 font-bold text-sm">Oxu →</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article
+                            onclick="openBlogModal('tokyo', 'Tokyonun Gece Hayatı', 'Əyləncə', '20 May 2024', 'assets/images/about/blog/tokyo.jpg')"
+                            class="blog-card bg-white rounded-[2.5rem] shadow-sm overflow-hidden cursor-pointer">
+                            <div class="h-64 overflow-hidden relative">
+                                <img src="assets/images/about/blog/tokyo.jpg"
+                                    class="w-full h-full object-cover hover:scale-110 transition duration-700">
+                                <span
+                                    class="absolute top-5 left-5 bg-purple-500 text-white text-[10px] px-4 py-1.5 rounded-full font-bold uppercase">Əyləncə</span>
+                            </div>
+                            <div class="p-8">
+                                <h3 class="text-2xl font-bold text-slate-900 mb-3">Tokyonun Gece Hayatı</h3>
+                                <p class="text-gray-500 text-sm line-clamp-2">Yaponiyanın paytaxtında gecə həyatının ən
+                                    parlaq və unudulmaz məkanları...</p>
+                                <div class="flex justify-between mt-6 pt-6 border-t border-gray-100 items-center">
+                                    <span class="text-gray-400 text-xs text-slate-900">20 May, 2024</span>
+                                    <span class="text-blue-600 font-bold text-sm">Oxu →</span>
+                                </div>
+                            </div>
+                        </article>
+                        <article
+                            onclick="openBlogModal('dubai', 'Dubayın Lüks Dünyası', 'Lüks', '15 İyun 2024', 'assets/images/about/blog/dubai.jpg')"
+                            class="blog-card bg-white rounded-[2.5rem] shadow-sm overflow-hidden cursor-pointer">
+                            <div class="h-64 overflow-hidden relative">
+                                <img src="assets/images/about/blog/dubai.jpg"
+                                    class="w-full h-full object-cover hover:scale-110 transition duration-700">
+                                <span
+                                    class="absolute top-5 left-5 bg-yellow-500 text-white text-[10px] px-4 py-1.5 rounded-full font-bold uppercase">Lüks</span>
+                            </div>
+                            <div class="p-8">
+                                <h3 class="text-2xl font-bold text-slate-900 mb-3">Dubayın Lüks Dünyasınin suqutu</h3>
+                                <p class="text-gray-500 text-sm line-clamp-2">Dünyanın ən lüks və ekstravaqant şəhərinin
+                                    ən möhtəşəm təcrübələri...</p>
+                                <div class="flex justify-between mt-6 pt-6 border-t border-gray-100 items-center">
+                                    <span class="text-gray-400 text-xs text-slate-900">15 İyun, 2024</span>
+                                    <span class="text-blue-600 font-bold text-sm">Oxu →</span>
+                                </div>
+                            </div>
+
+                        </article>
+
+                        <article
+                            onclick="openBlogModal('rio', 'Rionun Tarixi Gözəllikləri', 'Tarix', '10 İyul 2024', 'assets/images/about/blog/rio.jpg')"
+                            class="blog-card bg-white rounded-[2.5rem] shadow-sm overflow-hidden cursor-pointer">
+                            <div class="h-64 overflow-hidden relative">
+                                <img src="assets/images/about/blog/rio.png"
+                                    class="w-full h-full object-cover hover:scale-110 transition duration-700">
+                                <span
+                                    class="absolute top-5 left-5 bg-red-500 text-white text-[10px] px-4 py-1.5 rounded-full font-bold uppercase">Tarix</span>
+                            </div>
+                            <div class="p-8">
+                                <h3 class="text-2xl font-bold text-slate-900 mb-3">Rionun Tarixi Gözəllikləri</h3>
+                                <p class="text-gray-500 text-sm line-clamp-2">Əbədi şəhərin ən möhtəşəm və az tanınan
+                                    tarixi yerləri...</p>
+                                <div class="flex justify-between mt-6 pt-6 border-t border-gray-100 items-center">
+                                    <span class="text-gray-400 text-xs text-slate-900">10 İyul, 2024</span>
+                                    <span class="text-blue-600 font-bold text-sm">Oxu →</span>
+                                </div>
+                            </div>
+
+                        </article>
+                        <article
+                            onclick="openBlogModal('bali', 'Balinin Gözəllikləri', 'Əyləncə', '20 İyul 2024', 'assets/images/about/blog/bali.jpg')"
+                            class="blog-card bg-white rounded-[2.5rem] shadow-sm overflow-hidden cursor-pointer">
+                            <div class="h-64 overflow-hidden relative">
+                                <img src="assets/images/about/blog/bali.jpg"
+                                    class="w-full h-full object-cover hover:scale-110 transition duration-700">
+                                <span
+                                    class="absolute top-5 left-5 bg-green-500 text-white text-[10px] px-4 py-1.5 rounded-full font-bold uppercase">Əyləncə</span>
+                            </div>
+                            <div class="p-8">
+                                <h3 class="text-2xl font-bold text-slate-900 mb-3">Balinin Gözəllikləri</h3>
+                                <p class="text-gray-500 text-sm line-clamp-2">Tropik cənnətin ən möhtəşəm və az tanınan
+                                    gözəllikləri...</p>
+                                <div class="flex justify-between mt-6 pt-6 border-t border-gray-100 items-center">
+                                    <span class="text-gray-400 text-xs text-slate-900">20 İyul, 2024</span>
+                                    <span class="text-blue-600 font-bold text-sm">Oxu →</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <div id="gallery-content" class="tab-pane hidden">
+                    <div class="columns-1 md:columns-3 lg:columns-4 gap-4 space-y-4">
+                        <div class="gallery-item relative rounded-3xl overflow-hidden cursor-zoom-in group"
+                            onclick="openLightbox('assets/images/about/gallery/1.jpg')">
+                            <img src="assets/images/about/gallery/1.jpg"
+                                class="w-full transition group-hover:brightness-50">
+                            <div
+                                class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity text-white text-3xl">
+                                +</div>
+                        </div>
+                        <div class="gallery-item relative rounded-3xl overflow-hidden cursor-zoom-in group"
+                            onclick="openLightbox('assets/images/about/gallery/2.jpg')">
+                            <img src="assets/images/about/gallery/2.jpg"
+                                class="w-full transition group-hover:brightness-50">
+                            <div
+                                class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity text-white text-3xl">
+                                +</div>
+                        </div>
+                        <div class="gallery-item relative rounded-3xl overflow-hidden cursor-zoom-in group"
+                            onclick="openLightbox('assets/images/about/gallery/3.jpg')">
+                            <img src="assets/images/about/gallery/3.jpg"
+                                class="w-full transition group-hover:brightness-50">
+                            <div
+                                class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity text-white text-3xl">
+                                +</div>
+                        </div>
+                        <div class="gallery-item relative rounded-3xl overflow-hidden cursor-zoom-in group"
+                            onclick="openLightbox('assets/images/about/gallery/4.jpg')">
+                            <img src="assets/images/about/gallery/4.jpg"
+                                class="w-full transition group-hover:brightness-50">
+                            <div
+                                class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity text-white text-3xl">
+                                +</div>
+                        </div>
+                        <div class="gallery-item relative rounded-3xl overflow-hidden cursor-zoom-in group"
+                            onclick="openLightbox('assets/images/about/gallery/5.jpg')">
+                            <img src="assets/images/about/gallery/5.jpg"
+                                class="w-full transition group-hover:brightness-50">
+                            <div
+                                class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity text-white text-3xl">
+                                +</div>
+                        </div>
+                        <div class="gallery-item relative rounded-3xl overflow-hidden cursor-zoom-in group"
+                            onclick="openLightbox('assets/images/about/gallery/6.jpg')">
+                            <img src="assets/images/about/gallery/6.jpg"
+                                class="w-full transition group-hover:brightness-50">
+                            <div
+                                class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity text-white text-3xl">
+                                +</div>
+
+                        </div>
+
+                        <div class="gallery-item relative rounded-3xl overflow-hidden cursor-zoom-in group"
+                            onclick="openLightbox('assets/images/about/gallery/7.jpg')">
+                            <img src="assets/images/about/gallery/7.jpg"
+                                class="w-full transition group-hover:brightness-50">
+                            <div
+                                class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity text-white text-3xl">
+                                +</div>
+
+                        </div>
+                        <div class="gallery-item relative rounded-3xl overflow-hidden cursor-zoom-in group"
+                            onclick="openLightbox('assets/images/about/gallery/8.jpg')">
+                            <img src="assets/images/about/gallery/8.jpg"
+                                class="w-full transition group-hover:brightness-50">
+                            <div
+                                class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity text-white text-3xl">
+                                +</div>
+                        </div>
+                        <div class="gallery-item relative rounded-3xl overflow-hidden cursor-zoom-in group"
+                            onclick="openLightbox('assets/images/about/gallery/9.jpg')">
+                            <img src="assets/images/about/gallery/9.jpg"
+                                class="w-full transition group-hover:brightness-50">
+                            <div
+                                class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity text-white text-3xl">
+                                +</div>
+                        </div>
+                         <div class="gallery-item relative rounded-3xl overflow-hidden cursor-zoom-in group"
+                            onclick="openLightbox('assets/images/about/gallery/10.jpg')">
+                            <img src="assets/images/about/gallery/10.jpg"
+                                class="w-full transition group-hover:brightness-50">
+                            <div
+                                class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity text-white text-3xl">
+                                +</div>
+                        </div>
+                        <div class="gallery-item relative rounded-3xl overflow-hidden cursor-zoom-in group"
+                            onclick="openLightbox('assets/images/about/gallery/11.jpg')">
+                            <img src="assets/images/about/gallery/11.jpg"
+                                class="w-full transition group-hover:brightness-50">
+                            <div
+                                class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity text-white text-3xl">
+                                +</div>
+                        </div>
+                        <div class="gallery-item relative rounded-3xl overflow-hidden cursor-zoom-in group"
+                            onclick="openLightbox('assets/images/about/gallery/12.jpg')">
+                            <img src="assets/images/about/gallery/12.jpg"
+                                class="w-full transition group-hover:brightness-50">
+                            <div
+                                class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity text-white text-3xl">
+                                +</div>
+                        </div>
+                        
+                        </div>
+                        
+                            
+                    </div>
+                </div>
+        </section>
+        <!-- Blog Modal -->
+        <div id="blogModal"
+            class="fixed inset-0 z-[330] hidden items-center justify-center bg-black/80 backdrop-blur-md p-4"
+            onclick="closeOnOutside(event, 'blogModal')">
+            <div
+                class="bg-white w-full max-w-8xl max-h-[110vh] rounded-[2.5rem] justify-center overflow-hidden relative flex flex-col md:flex-row shadow-2xl">
+                <button onclick="closeBlogModal()"
+                    class="absolute top-5 right-5 text-4xl text-gray-400 hover:text-red-500 z-10">&times;</button>
+                <div class="md:w-1/2 h-64 md:h-auto overflow-hidden">
+                    <img id="modalImage" src="" class="w-full h-full object-cover">
+                </div>
+                <div class="md:w-1/2 p-10 overflow-y-auto">
+                    <span id="modalTag" class="text-blue-600 font-bold text-xs uppercase tracking-widest"></span>
+                    <h2 id="modalTitle" class="text-3xl font-bold text-slate-900 my-4 leading-tight"></h2>
+                    <p id="modalDate" class="text-gray-400 text-sm mb-6"></p>
+                    <div id="modalBody" class="text-gray-600 leading-relaxed space-y-4">
+                    </div>
+                </div>
+            </div>
+        </div>
+<!-- Lightbox -->
+        <div id="lightbox" class="fixed inset-0 z-[110] hidden items-center justify-center bg-black/95 p-4"
+            onclick="closeLightbox()">
+            <button class="absolute top-10 right-10 text-white text-5xl">&times;</button>
+            <img id="lightboxImg" src=""
+                class="max-w-full max-h-[85vh] rounded-[15rem] shadow-2xl transform transition-transform scale-100">
+        </div>
+        <!-- PARTNERS -->
+        <section class="py-12 bg-gray-50 border-t border-gray-100">
+            <div class="container mx-auto px-6">
+                <p class="text-center text-gray-400 text-sm mb-8 uppercase tracking-widest">Rəsmi Tərəfdaşlarımız</p>
+                <div class="flex flex-wrap justify-center items-center gap-12 opacity-60">
+                    <a href="https://www.azal.az" target="_blank"
+                        class="grayscale hover:grayscale-0 transition duration-300">
+                        <img src="assets/images/about/partnyor/azerbaijan_airlines-logo_brandlogos.net_vh0bn.png"
+                            alt="AZAL" class="h-10">
+                    </a>
+                    <a href="https://www.turkishairlines.com" target="_blank"
+                        class="grayscale hover:grayscale-0 transition duration-300">
+                        <img src="assets/images/about/partnyor/Turkish_Airlines_logo_2019_compact.svg.png" alt="THY"
+                            class="h-10">
+                    </a>
+                    <a href="https://www.qatarairways.com" target="_blank"
+                        class="grayscale hover:grayscale-0 transition duration-300">
+                        <img src="assets/images/about/partnyor/Qatar_Airways_Logo.png" alt="Qatar Airways" class="h-10">
+                    </a>
+                    <a href="https://www.emirates.com" target="_blank"
+                        class="grayscale hover:grayscale-0 transition duration-300">
+                        <img src="assets/images/about/partnyor/ek.png" alt="Emirates" class="h-10">
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- FOOTER -->
+    <footer class="bg-[#0a1128] text-gray-400 font-sans border-t border-white/5">
+        <div class="container mx-auto px-6 md:px-12 pt-20 pb-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+
+                <div class="space-y-6">
+                    <a href="/" class="inline-block">
+                        <img src="assets/images/logo/extension_icon (1).png" alt="Avenora Logo"
+                            class="h-12 w-auto brightness-110">
+                    </a>
+                    <p class="text-sm leading-relaxed max-w-xs opacity-80 hover:opacity-100 transition-opacity">
+                        Xəyallarınızdakı səyahəti bizimlə planlaşdırın. Dünyanın hər nöqtəsinə peşəkar və lüks turizm
+                        xidmətləri təklif edirik.
+                    </p>
+                    <div class="flex gap-4 pt-2">
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all duration-300 border border-white/10">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-pink-600 hover:text-white transition-all duration-300 border border-white/10">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-blue-400 hover:text-white transition-all duration-300 border border-white/10">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-red-600 hover:text-white transition-all duration-300 border border-white/10">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4
+                        class="text-white text-lg font-bold mb-8 relative inline-block after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-8 after:h-0.5 after:bg-blue-500">
+                        Sürətli Keçidlər
+                    </h4>
+                    <ul class="space-y-4 text-sm font-medium">
+                        <li><a href="index.html"
+                                class="hover:text-blue-400 hover:translate-x-2 transition-all inline-block">Ana
+                                Səhifə</a></li>
+                        <li><a href="tours.html"
+                                class="hover:text-blue-400 hover:translate-x-2 transition-all inline-block">Turlarımız</a>
+                        </li>
+                        <li><a href="about.html"
+                                class="hover:text-blue-400 hover:translate-x-2 transition-all inline-block">Haqqımızda</a>
+                        </li>
+                        <li><a href="media.html"
+                                class="hover:text-blue-400 hover:translate-x-2 transition-all inline-block">Blog &
+                                Media</a></li>
+                        <li><a href="contact.html"
+                                class="hover:text-blue-400 hover:translate-x-2 transition-all inline-block">Əlaqə</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4
+                        class="text-white text-lg font-bold mb-8 relative inline-block after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-8 after:h-0.5 after:bg-blue-500">
+                        Səyahət Növləri
+                    </h4>
+                    <ul class="space-y-4 text-sm font-medium">
+                        <li><a href="#" class="hover:text-white transition">Çimərlik İstirahəti</a></li>
+                        <li><a href="#" class="hover:text-white transition">Mədəni Turlar</a></li>
+                        <li><a href="#" class="hover:text-white transition">Macəra Dolu Səyahətlər</a></li>
+                        <li><a href="#" class="hover:text-white transition">Lüks Paketlər</a></li>
+                        <li><a href="#" class="hover:text-white transition">Korporativ Turlar</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4
+                        class="text-white text-lg font-bold mb-8 relative inline-block after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-8 after:h-0.5 after:bg-blue-500">
+                        Əlaqə
+                    </h4>
+                    <ul class="space-y-5 text-sm">
+                        <li class="flex items-start gap-4 group">
+                            <div
+                                class="w-8 h-8 rounded-lg bg-blue-600/10 flex items-center justify-center text-blue-500 group-hover:bg-blue-600 group-hover:text-white transition">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <span class="pt-1">office@avenora.az</span>
+                        </li>
+                        <li class="flex items-start gap-4 group">
+                            <div
+                                class="w-8 h-8 rounded-lg bg-blue-600/10 flex items-center justify-center text-blue-500 group-hover:bg-blue-600 group-hover:text-white transition">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <span class="pt-1 leading-relaxed">+994 77 721 95 55<br><span
+                                    class="text-xs opacity-60">Dəstək: 24/7</span></span>
+                        </li>
+                        <li class="flex items-start gap-4 group">
+                            <div
+                                class="w-8 h-8 rounded-lg bg-blue-600/10 flex items-center justify-center text-blue-500 group-hover:bg-blue-600 group-hover:text-white transition">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <span class="pt-1 leading-relaxed">Cəfər Cabbarlı küç. 43,<br>Deluxe Plaza, 4-cü
+                                mərtəbə</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div
+                class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs tracking-wider opacity-60">
+                <p>© 2026 Avenora Travel. Bütün hüquqlar qorunur.</p>
+                <div class="flex gap-6">
+                    <a href="#" class="hover:text-white transition">Məxfilik Siyasəti</a>
+                    <a href="#" class="hover:text-white transition">İstifadə Şərtləri</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="assets/js/pages/about.js"></script>
+    <script defer src="assets/js/main.js"></script>
+    <script defer src="assets/js/pages/home.js"></script>
+    <script defer src="assets/js/components/navbar.js"></script>
+    <script defer src="assets/js/components/slider.js"></script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,          // animasiya müddəti (ms)
+            once: true,             // yalnız bir dəfə görünsün (yenidən scroll-da təkrarlanmasın)
+            easing: 'ease-out',     // yumşaq keçid
+            offset: 120,            // element görünməzdən neçə px əvvəl başlasın
+            anchorPlacement: 'top-bottom'
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="az">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sifarişlərim - Avenora Travel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+
+<body class="bg-slate-50 min-h-screen">
+
+    <nav class="bg-white border-b border-slate-200 px-6 py-4 flex justify-between items-center">
+        <a href="../index.html" class="flex items-center gap-2">
+            <img src="../assets/images/logo/extension_icon (1).png" class="h-8">
+            <span class="font-bold text-xl text-slate-800">Avenora</span>
+        </a>
+        <a href="../index.html" class="text-sm font-medium text-blue-600 hover:underline">
+            <i class="fa-solid fa-arrow-left"></i> Sayta qayıt
+        </a>
+    </nav>
+
+    <main class="container mx-auto px-6 py-12">
+        <div class="max-w-4xl mx-auto">
+            <div class="flex items-center justify-between mb-8">
+                <div>
+                    <h1 class="text-3xl font-black text-slate-900">Sifarişlərim</h1>
+                    <p class="text-slate-500">Rezerv etdiyiniz bütün turlar və statusları.</p>
+                </div>
+                <div class="bg-blue-100 text-blue-700 px-4 py-2 rounded-2xl font-bold text-sm">
+                    Cəmi: <span id="booking-count">0</span> tur
+                </div>
+            </div>
+
+            <div id="bookings-container" class="space-y-4">
+                <div class="text-center py-20 bg-white rounded-[32px] border-2 border-dashed border-slate-200">
+                    <i class="fa-solid fa-suitcase-rolling text-4xl text-slate-300 mb-4"></i>
+                    <p class="text-slate-400 font-medium">Hələ ki, heç bir rezervasiyanız yoxdur.</p>
+                    <a href="../tours.html" class="inline-block mt-4 text-blue-600 font-bold hover:underline">Turları
+                        kəşf et</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="../assets/js/pages/user.js"></script>
+    <script src="../assets/js/components/navbar.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            easing: 'ease-out'
+        });
+    </script>
+</body>
+
+</html>

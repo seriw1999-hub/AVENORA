@@ -1,0 +1,18 @@
+.type-card,
+.destination-card,
+.service-card,
+.tour-card {
+    border-radius: var(--card-radius);
+    overflow: hidden;
+    transition: var(--transition);
+    background: var(--white);
+    box-shadow: 0 6px 18px #16161b69;
+}
+
+.type-card:hover,
+.destination-card:hover,
+.service-card:hover,
+.tour-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 12px 30px #16161b69;
+}
